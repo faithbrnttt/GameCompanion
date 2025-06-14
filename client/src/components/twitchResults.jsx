@@ -12,18 +12,20 @@ function TwitchResults({ query }) {
             .catch((err) => console.error(err));
     }, [query]);
 
-    if (!streams.length) return null;
-
     return (
         <div>
             <div id="stream" className="twitch-header">
                 <h1>Twitch</h1>
             </div>
-            <hr></hr>
+            <hr />
             <div className="twitch-container">
-                {streams.map((stream) => (
-                    <TwitchCard key={stream.id || stream.broadcaster_login} stream={stream} />
-                ))}
+                {streams.length > 0 ? (
+                    streams.map((stream) => (
+                        <TwitchCard key={stream.id || stream.broadcaster_login} stream={stream} />
+                    ))
+                ) : (
+                    <p style={{ color: 'white' }}></p>
+                )}
             </div>
         </div>
     );

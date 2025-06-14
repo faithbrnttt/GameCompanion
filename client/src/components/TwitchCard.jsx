@@ -1,14 +1,14 @@
-function TwitchStreamCard({ stream }) {
+function TwitchCard({ stream }) {
     const thumbnail = stream.thumbnail_url
         ?.replace('{width}', '300')
         ?.replace('{height}', '180');
 
     return (
-        <div className="card">
-            <div className="card-image-container">
-                <img src={thumbnail} alt={stream.title} className="card-image" />
+        <div className="twitch-card">
+            <div className="twitch-card-image-container">
+                <img src={thumbnail} alt={stream.title} className="twitch-image" />
             </div>
-            <div className="card-content">
+            <div className="twitch-card-content">
                 <h3>{stream.display_name}</h3>
                 <p className="source">Live: {stream.title}</p>
                 <p className="description">Game: {stream.game_name || 'N/A'}</p>
@@ -25,4 +25,4 @@ function TwitchStreamCard({ stream }) {
     );
 }
 
-export default TwitchStreamCard;
+export default TwitchCard;
