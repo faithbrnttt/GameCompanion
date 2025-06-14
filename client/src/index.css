@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(36, 36, 38);
+}
+
+.nav-container-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding-top: 1rem;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-evenly;
+    padding-block: .75rem;
+    align-items: center;
+    position: fixed;
+    width: 85%;
+    border-radius: 50px;
+    background-color: rgb(0, 0, 0);
+    z-index: 1000;
+}
+
+.nav-container h2 {
+    color: white;
+    cursor: pointer;
+}
+
+.section-nav {
+    display: flex;
+    list-style: none;
+    padding-block: .2rem;
+    padding-inline: .75rem;
+}
+
+.section-nav a {
+    text-decoration: none;
+    color: white;
+}
+
+.section-nav li {
+    width: 100px;
+    text-align: center;
+    margin-inline: 5px;
+    border: 2px solid #e68804;
+    border-radius: 50px;
+    padding-inline: .8rem;
+    padding-block: .2rem;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.section-nav li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 2px 0 0 rgba(255, 140, 0, 0.8);
+}
+
+.search-wrapper {
+    position: relative;
+
+    max-width: 400px;
+}
+
+.search {
+    padding-block: .25rem;
+    padding-left: .5rem;
+    border-radius: 25px;
+    border: 2px solid #e68804;
+    background-color: #efeeed;
+    font-size: 1rem;
+}
+
+.search:focus {
+    outline: none;
+    border-color: #f39c12;
+}
+
+.search-btn {
+    position: absolute;
+    top: 53%;
+    right: 10px;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    color: #e68804;
+    cursor: pointer;
+    padding: 0;
+}
+
+.search-btn:hover {
+    color: #cc6f03;
+}
+
+
+.news-header,
+.game-header,
+.twitch-header {
+    max-height: 20vh;
+    padding-top: 7rem;
+    padding-inline: 8rem;
+    color: white;
+    font-size: 16px;
+}
+
+
+hr {
+    width: 50%;
+    margin-left: 160px;
+    border: 1px solid orange;
+}
+
+.news-container,
+.game-container,
+.twitch-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-block: 1rem;
+    padding-inline: 7rem;
+    gap: 1rem;
+}
+
+.card,
+.game-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 500px;
+    width: 100%;
+    max-width: 300px;
+    border-left: 6px solid #e68804;
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 1rem auto;
+    background: #efefef;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+
+
+.card:hover,
+.game-card:hover {
+    transform: scale(1.02);
+    z-index: 2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card-image-container,
+.game-image-container {
+    width: 100%;
+    height: 180px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.card-image,
+.game-image {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+    display: block;
+}
+
+
+.card-content,
+.game-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    flex-grow: 1;
+    padding: 1rem;
+    overflow: hidden;
+}
+
+.card-content h3 {
+    background-color: #e68804;
+    color: white;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: 1.6;
+}
+
+
+.game-content h3 {
+    background-color: #e68804;
+    color: white;
+    padding: 0.4rem 0.75rem;
+    border-radius: 6px;
+    font-size: 18px;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+
+.card-content p,
+.game-content p,
+.rating-badge {
+    font-size: 0.9rem;
+    color: #2a3042;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0.25rem 0;
+}
+
+.card-content .description,
+.card-content .source {
+    font-size: 0.9rem;
+    color: #2a3042;
+    line-height: 1.3;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    /* show up to 2 lines */
+    line-clamp: 2;
+    /* standard property for compatibility */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+.rating-badges {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+
+}
+
+.divider {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+
+
+.rating-badge {
+    color: navy;
+    font-weight: bold;
+    border-radius: 15px;
+    font-size: 0.75rem;
+}
+
+
+
+.info,
+.info-btn {
+    width: 100%;
+    margin-top: auto;
+    /* Pushes button to the bottom */
+    align-self: flex-start;
+    padding: 0.4rem 0.75rem;
+    border-radius: 20px;
+    background-color: #e68804;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    transition: background-color 0.2s ease;
+}
+
+.info:hover,
+.info-btn:hover {
+    background-color: #cc6f03;
+    color: white;
+}
+
+
+
+
+
+
+/* Hamburger icon hidden on large screens */
+.hamburger {
+    display: none;
+    font-size: 1.5rem;
+    background: none;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+/* Toggleable nav content */
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        border-radius: 0;
+        padding: 1rem;
+        border-radius: 25px;
+    }
+
+    .title-align {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .title-align .hamburger {
+        display: block;
+
+    }
+
+
+    .nav-content {
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 1rem;
+        width: 100%;
+    }
+
+    .nav-content.open {
+        display: flex;
+        align-items: center;
+    }
+
+    .search {
+        width: 300px;
+        align-self: center;
+    }
+
+    .section-nav {
+        flex-direction: column;
+        width: 100%;
+
+    }
+
+    .section-nav li {
+        width: 300px;
+        margin-block: 10px;
+    }
+
+    .news-header,
+    .game-header {
+        padding-inline: 2.5rem;
+        text-align: left;
+        padding-bottom: 0;
+    }
+
+    hr {
+        margin-inline: 45px;
+    }
+
+    .news-container,
+    .game-container {
+        justify-content: space-between;
+        padding-inline: 1rem;
+    }
+
+}
